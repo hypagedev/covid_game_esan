@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/blanco.png" type="Texture" id=1]
+[ext_resource path="res://escenas/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenas/virus.tscn" type="PackedScene" id=3]
+[ext_resource path="res://escenas/escena_principal.gd" type="Script" id=4]
+
+[node name="escena_principal" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="fondo_pantalla" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="policia" parent="." instance=ExtResource( 2 )]
+position = Vector2( 182.499, 295.279 )
+scale = Vector2( 1.595, 3.31042 )
+
+[node name="virus" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 348.593, 280.925 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
